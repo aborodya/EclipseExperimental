@@ -23,7 +23,7 @@ sd(weight)
 
 
 #1.1.4 Standard Procedures
-t.test(bmi,mu=22.5)
+t.test(bmi, mu=22.5)
 
 #mu=22.5 - theoretical mean.p-value is not small, so it is not unlikely
 #that true mean is 22.5, but 95% confidence interval is very wide (18.4 to 27.8),
@@ -421,5 +421,220 @@ read.table('clipboard', header=T)
 
 #2.5 Exercises
 
-#3 Probability and Distributions
-#3.1. Random Sampling
+#3. Probability and Distributions 
+#3.1 Random Sampling 
+sample(1:40,5)#without replacement 
+#with replacement 
+sample(c("T", "H"),10, replace=T) 
+#for skewed probability: 
+sample(c('succ', 'fail'),10,replace=T, prob=c(0.9, 0.1))
+#3.2 probability calculations and combinatorics 
+#probability of having certain numbers sampled without replacement 
+# in sample(1:40,5): probability of getting given numbers in a given order 
+1/prod(40:36) 
+#if we are in a lotto-like situation- need to guess a set of numbers correctly 
+#regardless of order 
+prod(5:1)/prod(40:36) 
+#the same as 
+choose(40,5) 
+#choose 5 from 40 
+#3.3 Discrete Distributions 
+#replications of a binary experiment 
+#f(x)=choose(n,x)*p^x*(l-p)^(n-x) 
+
+#3.S.1 Densities 
+#normal 
+x=seq(-4,4,0.1) 
+plot(x,pnorm(x),type='l') 
+curve(dnorm(x),col='red' ,add=T) 
+#binomial - pin diagram since discrete 
+x=0:50 
+plot(x,dbinom(x,size=50,prob=0.33),type="h") 
+plot(x,dbinom(x,size=50,prob=0.33),type="h",ylim=c(0,1)) 
+curve(pbinom(x,size=50,prob=0.33),add=T,col='blue') 
+#if in some measure described by normal (132,13) ,and somebody has a value of 160 
+1-pnorm(160,mean=132,sd=13) 
+#1.S6% of population has that value or higher 
+#another usage-stats tests 
+#20 patients - 2 treatments (blindly and randomized). (?) whether A or B worked better. 
+#16 liked A better. Is this a sufficient evidence that A is better, or it's just by chance 
+#and treatments are equally good 
+#if there was no difference, we would expect ppl pererring A to be binomially distributed 
+#with p=O.S and n=20. 
+#we need probability of the observed or more extreme, hence is, not 16 below 
+1-pbinom(15,20,prob=0.5) 
+#if we want two-tailed test (don't know which treatment works better 
+1-pbinom(15,20,prob=0.5)+pbinom(4,20,0.5)#binomial is sYmmetric=>twice one -tailed prob 
+binom.test(16,20,alternative='two.sided') 
+#quantiles 
+xbar=83 #mean of the observations 
+sigma=12#sd of the normdist 
+n=5#number of observations 
+#standard error of the mean 
+sem=sigma/sqrt(n);sem 
+xbar + sem*qnorm(0.025) 
+xbar + sem*qnorm(0.975) 
+#4 Descriptive Statistics and graphics 
+x=rnorm(50) 
+mean(x) 
+sd(x) 
+var(x) 
+median(x) 
+quantile(x) 
+pvec=seq(0,1,0.1) 
+quantile(x,pvec) 
+attach(juul) 
+mean(igf1) 
+mean(igf1,na.rm=T) 
+sum(!is.na(igf1)) 
+
+summary(igf1) 
+summary(juul) 
+detach(juul) 
+#to change display for the factor variables: 
+juul$sex=factor(juul$sex, labels=c("M" , "F" )) 
+juul$menarche=factor(juul$menarche,labels=c("No","Yes"))
+juul$tanner=factor(juul$tanner,labels=c("I","II","III","IV","V"))
+attach(juul) 
+summary(juul) 
+#same can be acheived using transform or within 
+juul=transform(juul, 
+	sex=factor (sex, labels=c ("N" , "F")),
+	menarche=factor(menarche,labels=c('No', 'Yes')), 
+	tanner=factor(tanner,labels=c("I","II","III","IV","V"))) 
+hist(x) 
+mid.age=c(2.5,7.5,13,16.5,17.5,19,22.5,44.5,70.5) 
+acc.count=c(28,46,58,20,31,64,149,316,103) 
+age.acc=rep(mid.age,acc.count) 
+brk=c(0,5,10,16,17,18,20,25,60,80) 
+hist(age.acc,breaks=brk) 
+n=length(x) 
+plot(sort(x), (1:n)/n,type='s',ylim=c(0,1)) #s-step function 
+plot(ecdf(x),add=T,col='blue') 
+lines(sort(x), (1:n)/n,type='s' ,ylim=c(0,1),col='red') 
+qqnorm(x) 
+qqline(x,col=2) 
+qqplot(x,rt(300,df=5))
+#4.2.4 boxplots 
+par(mfrow=c(1,2))
+boxplot(IgM) 
+boxplot(log(IgM))
+par(mfrow=c(1,1))#mfrow<=>multiframe,rowwise 
+#to get table of means and standard devs use tapply 
+attach(red.cell.folate) 
+xbar=tapply(folate,ventilation,mean) 
+s=tapply(folate,ventilation,sd) 
+n=tapply(folate,ventilation,length) 
+cbind(mean=xbar,std.dev=s, n=n) 
+attach(juul) 
+apply(igf1, tanner, mean, na.rm=T) 
+aggregate(juul[c('age', 'igf1')],list(sex=sex),mean,na.rm=T) 
+aggregate(juul[c('age', 'igf1')],juul['sex'],mean,na.rm=T) 
+by(juul,juul['sex'],summary) 
+
+attach(energy) 
+expend.lean=expend[stature=='lean'] 
+expend.obese=expend[stature=='obese'] 
+par(mfrow=c(2,1))
+hist(expend.lean,breaks=10,xlim=c(5,16),ylim=c(0,4),col='white') 
+hist(expend.obese,breaks=10,xlim=c(5,16),ylim=c(0,4),col='grey') 
+par(mfrow=c(1,1))
+boxplot(expend~stature) 
+boxplot(log(expend)~stature) 
+boxplot(expend.lean,expend.obese) 
+#stripcharts 
+opar=par(mfrow=c(2,2),mex=0.8,mar=c(3,3,2,1)+0.1)
+stripchart(expend~stature) 
+stripchart(expend~stature,method='stack') 
+stripchart(expend~stature,method='jitter') 
+stripchart(expend~stature,method='jitter' ,jitter=0.03) 
+par(opar) 
+#tables 
+caff.maritial=matrix(c(652,1537,598,242,36,46,38,21,218,327,106,67),nrow=3,byrow=T) 
+caff.maritial 
+colnames(caff.maritial)=c('0', '1-150', '151-300', '>300') 
+rownames(caff.maritial)=c('Married', 'Prev.married', 'Single') 
+caff.maritial 
+names(dimnames(caff.maritial))=c('maritial', 'consumption') 
+caff.maritial 
+#from matrix to a table 
+as.table(caff.maritial) 
+#to a data frame 
+as.data.frame(as.table(caff.maritial))
+#tabultaing 
+table(sex) 
+attach(juul) 
+table (menarche, tanner)
+table(sex,menarche) 
+qqq=as.data.frame(as.table(caff.maritial));qqq 
+attach(qqq) 
+table(consumption,maritial) 
+detach(qqq) 
+#better option 
+xtabs(~tanner+sex, data=juul)
+xtabs(Freq~consumption+maritial, data=qqq) 
+xtabs(~dgn+diab+coma,data=stroke) #uses dgn+diab for a table, coma as a cathegory (one more dimension) 
+ftable(coma+diab~dgn, data=stroke)#better way (titles with subtitles 
+
+t(caff.maritial)#can transpose 
+
+#4.2.5.2 Marginal tables and relative frequencies 
+tanner.sex=table(tanner,sex);tanner.sex 
+#sum by dimension 
+margin.table(tanner.sex, 1) 
+margin.table(tanner.sex, 2) 
+#relative frequencies 
+prop.table(tanner.sex,1) #percentage by dimension-rows will sum up to 1 
+prop.table(tanner.sex) #percentage by dimension - the whole matrix will sum up to 1.2 somehow doesn't work, so see below 
+prop.table(t(tanner.sex) ,1) 
+#graphical display of tables 
+total.caff=margin.table(caff.maritial,2);total.caff 
+barplot(total.caff,col="white") 
+opar=par(mfrow=c(2,2))
+barplot(caff.maritial,col='white') 
+barplot(t(caff.maritial),col='white') 
+barplot(t(caff.maritial),col='white' ,beside=T) 
+barplot(prop.table(t(caff.maritial)), col='white' ,beside=T) 
+par(opar) 
+require(fUtilities) 
+barplot(prop.table(t(caff.maritial)),col=rainbow(4) ,beside=T,legend.text=colnames(caff.maritial))
+#dot chart 
+dotchart(t(caff.maritial),lcolor='blue') 
+#pie chart 
+opar=par(mfrow=c(2,2) , mex=0.8, mar=c(1,1,2,1))
+slices=rainbow(4) 
+pie(caff.maritial['Married',], main="Married" , col=slices) 
+pie(caff.maritial['Prev.married',], main="Previously Married", col=slices) 
+pie(caff.maritial['Single',], main="Single", col=slices) 
+par(opar) 
+#Exercises 
+#4.1 diff plots/colors/fills 
+x=1:5;y=rexp(5,1) 
+opar=par(mfrow=c(2,2))
+plot(x,y,pch=15)#filled square 
+plot(x,y,type='b' ,lty='dotted') 
+plot(x,y,type='b' ,lwd=3) 
+plot(x,y,type='o',col='blue') 
+par(opar) 
+#4.2 
+#filled symbol 
+plot(rnorm(10),type='o' ,pch=21,bg='white') 
+#4.3 overlaid qqnorms 
+
+xl=rnorm(20) 
+x2=rnorm(10)+1 
+ql=qqnorm(x1,plot.it=F) 
+q2=qqnorm(x2,plot.it=F) 
+xr=range(ql$x,q2$x) 
+yr=range(ql$y,q2$y) 
+qqnorm(sort(x1),xlim=xr,ylim=yr) 
+points(q2, col='red') 
+#4.4 discrete data histogram 
+library(MASS) 
+truehist(react,h=1,x0=0.5) #shifts the hist to eliminate bias due to discrete nature of data 
+hist(react,add=T, freq=F, breaks=20) 
+#4.5 
+z=runif(5) 
+curve(quantile(z,x),from=0,to=1) 
+#5 One and Two Sample Tests 
+
