@@ -442,7 +442,7 @@ choose(40,5)
 #replications of a binary experiment 
 #f(x)=choose(n,x)*p^x*(l-p)^(n-x) 
 
-#3.S.1 Densities 
+#3.5.1 Densities 
 #normal 
 x=seq(-4,4,0.1) 
 plot(x,pnorm(x),type='l') 
