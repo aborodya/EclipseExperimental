@@ -570,7 +570,9 @@ qqq=as.data.frame(as.table(caff.maritial));qqq
 attach(qqq) 
 table(consumption,maritial) 
 detach(qqq) 
-#better option 
+
+# better option
+
 xtabs(~tanner+sex, data=juul)
 xtabs(Freq~consumption+maritial, data=qqq) 
 xtabs(~dgn+diab+coma,data=stroke) #uses dgn+diab for a table, coma as a cathegory (one more dimension) 
@@ -636,5 +638,6 @@ hist(react,add=T, freq=F, breaks=20)
 #4.5 
 z=runif(5) 
 curve(quantile(z,x),from=0,to=1) 
-#5 One and Two Sample Tests 
 
+
+# 5 One and Two Sample Tests  ---------------------------------------------
