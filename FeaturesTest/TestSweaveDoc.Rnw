@@ -1,0 +1,14 @@
+% 
+\documentclass[a4paper]{article}
+\usepackage{Sweave}
+
+\title{SweaveTest}
+\author{aborodya}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+
+\end{document}
