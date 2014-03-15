@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 class dtree:
     """ Decision Tree with weights"""
     

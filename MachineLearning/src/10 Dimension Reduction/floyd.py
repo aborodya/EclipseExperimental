@@ -11,6 +11,7 @@
 from numpy import *
 import time
 
+
 def floyd():
     
     ndata = 100

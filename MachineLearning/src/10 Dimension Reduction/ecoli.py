@@ -9,8 +9,13 @@
 # Stephen Marsland, 2008
 
 # Simple example of LDA, PCA, and kernel PCA, on the Wine and e-coli datasets
-from pylab import *
 from numpy import *
+from pylab import *
+
+import kernelpca
+import lda
+import pca
+
 
 wine = loadtxt('../9 Unsupervised/wine.data',delimiter=',')
 
@@ -32,7 +37,6 @@ w0 = where(labels==1)
 w1 = where(labels==2)
 w2 = where(labels==3)
 
-import lda
 newData,w = lda.lda(data,labels,2)
 
 plot(data[w0,0],data[w0,1],'ok')
@@ -47,7 +51,6 @@ plot(newData[w2,0],newData[w2,1],'vk')
 axis([-1.5,1.8,-1.5,1.8])
 axis('off')
 
-import pca
 x,y,evals,evecs = pca.pca(data,2)
 figure(3)
 plot(y[w0,0],y[w0,1],'ok')
@@ -55,7 +58,6 @@ plot(y[w1,0],y[w1,1],'^k')
 plot(y[w2,0],y[w2,1],'vk')
 axis('off')
 
-import kernelpca
 newData = kernelpca.kernelpca(data,'gaussian',2)
 figure(4)
 plot(newData[w0,0],newData[w0,1],'ok')

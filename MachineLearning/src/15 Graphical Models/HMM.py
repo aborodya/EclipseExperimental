@@ -11,6 +11,7 @@
 # A basic Hidden Markov Model
 from numpy import *
 
+
 def HMMfwd(a,b,obs):
 
 	nStates = shape(b)[0]

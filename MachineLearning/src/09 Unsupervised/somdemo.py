@@ -10,10 +10,12 @@
 
 # A simple example of using the SOM on a 2D dataset showing the neighbourhood connections
 
-from pylab import *
 from numpy import *
+from pylab import *
 
 import som
+
+
 nNodesEdge = 8
 data = (random.rand(2000,2)-0.5)*2
 

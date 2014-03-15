@@ -33,9 +33,12 @@ def preprocessIris(infile,outfile):
     oid.close()
 
 from numpy import *
+
+import mlp
+
+
 # Preprocessor to remove the test (only needed once)
 #preprocessIris('/Users/srmarsla/Book/Datasets/Iris/iris.data','iris_proc.data')
-
 iris = loadtxt('iris_proc.data',delimiter=',')
 iris[:,:4] = iris[:,:4]-iris[:,:4].mean(axis=0)
 imax = concatenate((iris.max(axis=0)*ones((1,5)),iris.min(axis=0)*ones((1,5))),axis=0).max(axis=0)
@@ -67,7 +70,6 @@ testt = target[3::4]
 #print train.max(axis=0), train.min(axis=0)
 
 # Train the network
-import mlp
 net = mlp.mlp(train,traint,5,outtype='softmax')
 net.earlystopping(train,traint,valid,validt,0.1)
 net.confmat(test,testt)

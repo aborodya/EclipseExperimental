@@ -8,11 +8,11 @@
 
 # Stephen Marsland, 2008
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 # The boosting example of a simple 2D dataset with 2 classes
-
 def train(data,classes,weights,whichdim):
         
     error = zeros(10)

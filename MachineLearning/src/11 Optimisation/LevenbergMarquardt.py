@@ -11,6 +11,7 @@
 # The Levenberg Marquardt algorithm
 from numpy import *
 
+
 def function(p):
     r = array([10*(p[1]-p[0]**2),(1-p[0])])
     fp = dot(transpose(r),r) #= 100*(p[1]-p[0]**2)**2 + (1-p[0])**2

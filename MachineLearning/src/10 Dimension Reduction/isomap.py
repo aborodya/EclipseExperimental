@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # The Isomap algorithm
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def swissroll():
 	# Make the swiss roll dataset

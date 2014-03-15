@@ -10,8 +10,9 @@
 
 # The Kernel PCA algorithm
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def kernelmatrix(data,kernel,param=array([3,2])):
     

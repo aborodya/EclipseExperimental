@@ -11,7 +11,8 @@
 # A Gibbs sampler for the Exam Panic dataset
 
 from numpy import *
-    
+
+
 Pb = array([[0.5,0.5]])
 Pr_b = array([[0.3,0.7],[0.8,0.2]])
 Pa_b = array([[0.1,0.9],[0.5,0.5]])

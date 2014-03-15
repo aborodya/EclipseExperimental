@@ -9,10 +9,11 @@
 # Stephen Marsland, 2008
 
 # A simple example of PCA
-from pylab import *
 from numpy import *
+from pylab import *
 
 import pca
+
 
 x = random.normal(5,.5,1000)
 y = random.normal(3,1,1000)

@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # Plots a 1D Gaussian function
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 gaussian = lambda x: 1/(sqrt(2*pi)*1.5)*exp(-(x-0)**2/(2*(1.5**2)))
 x = arange(-5,5,0.01)

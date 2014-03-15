@@ -9,9 +9,10 @@
 # Stephen Marsland, 2008
 
 # The Factor Analysis algorithm
-from pylab import *
 from numpy import *
- 
+from pylab import *
+
+
 def factoranalysis(y,nRedDim):
     Ndata = shape(y)[0]
     N = shape(y)[1]

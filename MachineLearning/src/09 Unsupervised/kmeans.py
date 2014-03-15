@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 class kmeans:
 	""" The k-Means algorithm"""
 	def __init__(self,k,data):

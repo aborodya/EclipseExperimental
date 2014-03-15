@@ -9,8 +9,10 @@
 # Stephen Marsland, 2008
 
 from numpy import *
-import pcn
+
 import kmeans
+import pcn
+
 
 class rbf:
     """ The Radial Basis Function network

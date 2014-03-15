@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 class pcn:
 	""" A basic Perceptron (the same pcn.py except with the weights printed
 	and it does not reorder the inputs)"""

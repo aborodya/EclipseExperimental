@@ -11,6 +11,7 @@
 # A fitness function for the Knapsack problem
 from numpy import *
 
+
 def knapsack(pop):
 	maxSize = 500	
 	#sizes = array([193.71,60.15,89.08,88.98,15.39,238.14,68.78,107.47,119.66,183.70])

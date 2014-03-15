@@ -9,7 +9,9 @@
 # Stephen Marsland, 2008
 
 from numpy import *
+
 import mlp
+
 
 anddata = array([[0,0,0],[0,1,0],[1,0,0],[1,1,1]])
 xordata = array([[0,0,0],[0,1,1],[1,0,1],[1,1,0]])

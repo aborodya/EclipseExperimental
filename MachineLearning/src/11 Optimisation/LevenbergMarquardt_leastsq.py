@@ -10,8 +10,9 @@
 
 # The Levenberg Marquardt algorithm solving a least-squares problem
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def function(p,x,ydata):
     fp = p[0]*cos(p[1]*x)+ p[1]*sin([p[0]*x])

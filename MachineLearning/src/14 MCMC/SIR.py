@@ -9,8 +9,10 @@
 # Stephen Marsland, 2008
 
 # The Sampling-Importance-Resampling algorithm
-from pylab import *
 from numpy import *
+from pylab import *
+import time
+
 
 def p(x):
     return 0.3*exp(-(x-0.3)**2) + 0.7* exp(-(x-2.)**2/0.3) 
@@ -56,7 +58,6 @@ box[-5:] = 0
 plot(x,realdata,'k',lw=6)
 plot(x2,box,'k--',lw=6)
 
-import time
 t0=time.time()
 samples = sir(10000)
 t1=time.time()

@@ -10,8 +10,10 @@
 
 # The basic rejection sampling algorithm
 
-from pylab import *
 from numpy import *
+from pylab import *
+import time
+
 
 def qsample():
     return random.rand()*4.
@@ -46,7 +48,6 @@ box[-5:] = 0
 plot(x,realdata,'k',lw=6)
 plot(x2,box,'k--',lw=6)
 
-import time
 t0=time.time()
 samples = rejection(10000)
 t1=time.time()

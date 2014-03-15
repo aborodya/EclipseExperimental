@@ -11,6 +11,7 @@
 # The linear congruential pseudo-random number generator
 from numpy import *
 
+
 def lcg(x0,n):
     # These choices show the periodicity very well
     # Better choices are a = 16,807 m = 2**31 -1 c = 0

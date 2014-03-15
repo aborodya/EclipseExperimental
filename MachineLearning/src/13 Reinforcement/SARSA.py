@@ -12,6 +12,7 @@
 
 from numpy import *
 
+
 def SARSA():
 
     R = array([[-5,0,-inf,-inf,-inf,-inf],[0,-5,0,0,-inf,-inf],[-inf,0,-5,0,-inf,100],[-inf,0,0,-5,0,-inf],[-inf,-inf,-inf,0,-5,100],[-inf,-inf,0,-inf,-inf,0]])

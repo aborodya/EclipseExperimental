@@ -11,11 +11,13 @@
 # The Population Based Incremental Learning algorithm
 # Comment and uncomment fitness functions as appropriate (as an import and the fitnessFunction variable)
 
-from pylab import *
 from numpy import *
-#import fourpeaks as fF
+from pylab import *
+
 import knapsack as fF
 
+
+#import fourpeaks as fF
 def PBIL():
 	ion()
 	

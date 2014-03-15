@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # A simple Gibbs sampler
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def pxgiveny(y,mx,my,s1,s2):
     return random.normal(mx + (y-my)/s2,s1)

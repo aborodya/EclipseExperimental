@@ -12,9 +12,11 @@
 # The Genetic algorithm
 # Comment and uncomment fitness functions as appropriate (as an import and the fitnessFunction variable)
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 import knapsack as fF
+
 
 class ga:
 

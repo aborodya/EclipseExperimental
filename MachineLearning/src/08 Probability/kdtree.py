@@ -13,6 +13,7 @@
 
 from numpy import *
 
+
 class node:
 	# A passive class to hold the nodes
 	pass

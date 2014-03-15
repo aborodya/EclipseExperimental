@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 class mlp:
     """ A Multi-Layer Perceptron"""
     

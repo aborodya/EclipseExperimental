@@ -8,8 +8,9 @@
 
 # Stephen Marsland, 2008
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def GMM():
 
