@@ -13,7 +13,7 @@ from numpy import *
 import linreg
 
 #data can be found at http://archive.ics.uci.edu/ml/datasets/Auto+MPG
-auto = loadtxt('/Users/srmarsla/Book/Datasets/auto-mpg/auto-mpg.data.txt',comments='"')
+auto = loadtxt('/Users/aborodya/git/EclipseExperimental/MachineLearning/data/auto-mpg.data.txt',comments='"')
 
 # Separate the data into training and testing sets
 
