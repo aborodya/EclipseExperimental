@@ -12,6 +12,7 @@
 
 from numpy import *
 
+
 def TDZero_cliff():
 
     R = -ones((4,7,4))

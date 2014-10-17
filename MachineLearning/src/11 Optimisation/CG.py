@@ -11,6 +11,7 @@
 # The conjugate gradients algorithm
 from numpy import *
 
+
 def Jacobian(x):
 	#return array([.4*x[0],2*x[1]])
 	return array([x[0], 0.4*x[1], 1.2*x[2]])

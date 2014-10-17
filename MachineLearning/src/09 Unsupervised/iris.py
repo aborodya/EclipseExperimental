@@ -10,8 +10,12 @@
 
 # Examples of using the k-means and SOM algorithms on the Iris dataset
 
-from pylab import *
 from numpy import *
+from pylab import *
+
+import kmeansnet
+import som
+
 
 iris = loadtxt('../3 MLP/iris_proc.data',delimiter=',')
 iris[:,:4] = iris[:,:4]-iris[:,:4].mean(axis=0)
@@ -34,14 +38,12 @@ testt = target[3::4]
 
 #print train.max(axis=0), train.min(axis=0)
 
-import kmeansnet
 net = kmeansnet.kmeans(3,train)
 net.kmeanstrain(train)
 cluster = net.kmeansfwd(test)
 print 1.*cluster
 print iris[3::4,4]
 
-import som
 net = som.som(6,6,train)
 net.somtrain(train,400)
 

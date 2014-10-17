@@ -12,6 +12,7 @@
 
 from numpy import *
 
+
 def SARSA_cliff():
 
     R = -ones((4,7,4))

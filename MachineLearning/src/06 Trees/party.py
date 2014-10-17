@@ -10,7 +10,9 @@
 
 # Code to run the decision tree on the Party dataset
 from numpy import *
+
 import dtree
+
 
 tree = dtree.dtree()
 party,classes,features = tree.read_data('party.data')

@@ -10,8 +10,11 @@
 
 # The Palmerston North Ozone time series example
 
-from pylab import *
 from numpy import *
+from pylab import *
+
+import mlp
+
 
 PNoz = loadtxt('PNOz.dat')
 ion()
@@ -51,7 +54,6 @@ valid = inputs[1::2,:]
 validtargets = targets[1::2]
 
 # Train the network
-import mlp
 net = mlp.mlp(train,traintargets,3,outtype='linear')
 net.earlystopping(train,traintargets,valid,validtargets,0.25)
 

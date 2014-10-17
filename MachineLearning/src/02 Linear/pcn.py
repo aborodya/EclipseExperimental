@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 class pcn:
 	""" A basic Perceptron"""
 	

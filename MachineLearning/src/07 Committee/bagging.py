@@ -9,7 +9,9 @@
 # Stephen Marsland, 2008
 
 from numpy import *
+
 import dtree
+
 
 class bagger:
 

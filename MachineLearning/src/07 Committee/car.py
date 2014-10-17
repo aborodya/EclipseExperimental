@@ -10,8 +10,10 @@
 
 # An example of bagging on the Car Safety dataset
 from numpy import *
-import dtree
+
 import bagging
+import dtree
+
 
 tree = dtree.dtree()
 bagger = bagging.bagger()

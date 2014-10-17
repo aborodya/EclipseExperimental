@@ -11,6 +11,7 @@
 # A demonstration of four methods of solving the Travelling Salesman Problem
 from numpy import *
 
+
 def makeTSP(nCities):
 	positions = 2*random.rand(nCities,2)-1;
 	distances = zeros((nCities,nCities))

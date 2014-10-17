@@ -10,8 +10,9 @@
 
 # Plots of three 2D Gaussians
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 x = arange(-5,5,0.01)
 s = 1

@@ -11,6 +11,10 @@
 # Demonstration of the Perceptron and Linear Regressor on the basic logic functions
 
 from numpy import *
+
+import pcn_logic_eg
+
+
 inputs = array([[0,0],[0,1],[1,0],[1,1]])
 # AND data
 ANDtargets = array([[0],[0],[0],[1]])
@@ -18,7 +22,6 @@ ANDtargets = array([[0],[0],[0],[1]])
 ORtargets = array([[0],[1],[1],[1]])
 # XOR data
 XORtargets = array([[0],[1],[1],[0]])
-import pcn_logic_eg
 
 print "AND logic function"
 p = pcn_logic_eg.pcn(inputs,ANDtargets)

@@ -11,5 +11,6 @@
 # A runner for the Genetic Algorithm
 import ga
 
+
 ga = ga.ga(20,'fF.knapsack',101,100,-1,'sp',4,True)
 ga.runGA()

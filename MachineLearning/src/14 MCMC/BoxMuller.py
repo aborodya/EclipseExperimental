@@ -10,8 +10,9 @@
 
 # The Box-Muller algorithm for constructing pseudo-random Gaussian-distributed numbers
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def boxmuller(n):
     

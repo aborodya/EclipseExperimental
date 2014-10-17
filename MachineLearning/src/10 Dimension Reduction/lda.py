@@ -10,9 +10,10 @@
 
 # The LDA algorithm
 
-from pylab import *
 from numpy import *
+from pylab import *
 from scipy import linalg as la
+
 
 def lda(data,labels,redDim):
 

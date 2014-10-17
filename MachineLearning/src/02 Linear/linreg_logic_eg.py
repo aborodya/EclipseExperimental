@@ -11,7 +11,9 @@
 # Demonstration of the Perceptron and Linear Regressor on the basic logic functions
 
 from numpy import *
+
 import linreg
+
 
 inputs = array([[0,0],[0,1],[1,0],[1,1]])
 testin = concatenate((inputs,-ones((shape(inputs)[0],1))),axis=1)

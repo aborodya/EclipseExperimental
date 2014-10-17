@@ -9,9 +9,11 @@
 # Stephen Marsland, 2008
 
 # Demonstration of the SOM algorithm on the Wine dataset (and the e-coli dataset)
-from pylab import *
 from numpy import *
+from pylab import *
+
 import som
+
 
 wine = loadtxt('wine.data',delimiter=',')
 

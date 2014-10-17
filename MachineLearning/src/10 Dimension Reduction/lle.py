@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # The Locally Linear Embedding algorithm, and the swissroll example
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def swissroll():
 	# Make the swiss roll dataset

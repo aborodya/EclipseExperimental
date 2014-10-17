@@ -11,6 +11,7 @@
 # A k-Nearest Neighbour Classifier
 from numpy import *
 
+
 def knn(k,data,dataClass,inputs):
 
 	nInputs = shape(inputs)[0]

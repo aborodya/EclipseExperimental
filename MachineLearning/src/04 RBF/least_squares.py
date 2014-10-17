@@ -8,8 +8,9 @@
 
 # Stephen Marsland, 2008
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 x = arange(-3,10,0.05)
 y = 2.5 * exp(-(x)**2/9) + 3.2 * exp(-(x-0.5)**2/4) + random.normal(0.0, 1.0, len(x))

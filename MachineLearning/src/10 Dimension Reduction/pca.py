@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # An algorithm to compute PCA. Not as fast as the NumPy implementation
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def pca(data,nRedDim=0,normalise=1):
     

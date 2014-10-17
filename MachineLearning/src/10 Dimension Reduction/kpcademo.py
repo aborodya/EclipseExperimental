@@ -9,11 +9,12 @@
 # Stephen Marsland, 2008
 
 # Demonstration of PCA and kernel PCA on the circular dataset
-from pylab import *
 from numpy import *
+from pylab import *
 
-import pca
 import kernelpca
+import pca
+
 
 data = zeros((150,2))
 

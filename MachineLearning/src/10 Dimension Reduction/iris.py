@@ -9,8 +9,11 @@
 # Stephen Marsland, 2008
 
 # Various dimensionality reductions running on the Iris dataset
-from pylab import *
 from numpy import *
+from pylab import *
+
+import isomap
+
 
 iris = loadtxt('../3 MLP/iris_proc.data',delimiter=',')
 iris[:,:4] = iris[:,:4]-iris[:,:4].mean(axis=0)
@@ -82,7 +85,6 @@ w2 = where(labels==2)
 #plot(newData[w2,0],newData[w2,1],'vk')
 #axis('off')
 
-import isomap
 print labels
 newData,newLabels = isomap.isomap(iris,2,100)
 print shape(newData)

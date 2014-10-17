@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # Demonstration of the Markov Random Field method of image denoising
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def MRF(I,J,eta=2.0,zeta=1.5):
     ind =arange(shape(I)[0])

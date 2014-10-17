@@ -10,8 +10,9 @@
 
 # The 1D Kalman filter
 
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def Kalman(obs=None,mu_init=array([-0.37727]),cov_init=0.1*ones((1)),nsteps=50):
 

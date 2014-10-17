@@ -10,8 +10,11 @@
 
 # The sinewave regression example
 
-from pylab import *
 from numpy import *
+from pylab import *
+
+import mlp
+
 
 # Set up the data
 x = ones((1,40))*linspace(0,1,40)
@@ -34,7 +37,6 @@ xlabel('x')
 ylabel('t')
 
 # Perform basic training with a small MLP
-import mlp
 net = mlp.mlp(train,traintarget,3,outtype='linear')
 net.mlptrain(train,traintarget,0.25,101)
 

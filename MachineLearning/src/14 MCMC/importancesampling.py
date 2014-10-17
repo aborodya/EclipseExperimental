@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # The basic importance sampling algorithm
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def qsample():
     return random.rand()*4.

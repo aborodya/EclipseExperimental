@@ -10,6 +10,7 @@
 
 from numpy import *
 
+
 def linreg(inputs,targets):
 
 	inputs = concatenate((inputs,-ones((shape(inputs)[0],1))),axis=1)

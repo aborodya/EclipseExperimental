@@ -10,6 +10,8 @@
 
 # The four peaks fitness function
 from numpy import *
+
+
 def fourpeaks(population):
 
 	T = 15

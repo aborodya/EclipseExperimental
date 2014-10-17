@@ -10,8 +10,10 @@
 
 # Comparison of stumping and bagging on the Party dataset
 from numpy import *
-import dtw
+
 import bagging
+import dtw
+
 
 tree = dtw.dtree()
 bagger = bagging.bagger()

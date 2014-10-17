@@ -9,8 +9,9 @@
 # Stephen Marsland, 2008
 
 # The Metropolis-Hastings algorithm
-from pylab import *
 from numpy import *
+from pylab import *
+
 
 def p(x):
     mu1 = 3
